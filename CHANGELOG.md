@@ -1,5 +1,9 @@
 # Historique des versions
 
+## Non publié
+- Affichage : plus de « -0.00 dB » pour un gain nul (zéro négatif dû aux arrondis flottants).
+- (Renommer cette section en « ## X.Y.Z — date » en même temps que `PRISMA_VERSION` : la CI en tire les notes de release.)
+
 ## 0.2.0 — 2026-11-04
 - **Moteur Zero Latency.**
   - 10 formes.

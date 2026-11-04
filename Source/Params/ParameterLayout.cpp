@@ -29,7 +29,10 @@ namespace prisma::params
             return kilo ? v * 1000.0f : v;
         }
 
-        juce::String dbText (float db, int) { return juce::String (db, 2) + " dB"; }
+        /// Valeur arrondie au centième, sans « -0.00 » dû aux arrondis flottants.
+        float tidy (float v) { return std::abs (v) < 0.005f ? 0.0f : v; }
+
+        juce::String dbText (float db, int) { return juce::String (tidy (db), 2) + " dB"; }
     }
 
     const juce::StringArray& shapeNames()
@@ -92,7 +95,7 @@ namespace prisma::params
         out->addChild (std::make_unique<AudioParameterFloat> (ParameterID { id::outGain, kVersion }, "Gain de sortie",
                                                             NormalisableRange<float> (kOutGainMin, kOutGainMax, 0.01f), 0.0f,
                                                             AudioParameterFloatAttributes().withStringFromValueFunction ([] (float v, int)
-                                                            { return v <= kOutGainMin ? String ("-inf dB") : String (v, 2) + " dB"; })));
+                                                            { return v <= kOutGainMin ? String ("-inf dB") : String (tidy (v), 2) + " dB"; })));
         out->addChild (std::make_unique<AudioParameterFloat> (ParameterID { id::outPan, kVersion }, "Panoramique de sortie",
                                                             NormalisableRange<float> (-100.0f, 100.0f, 0.1f), 0.0f,
                                                             AudioParameterFloatAttributes().withLabel ("%")));

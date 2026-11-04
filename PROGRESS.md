@@ -43,7 +43,10 @@ Budget accordé : **33 $** (phases 1–2 + interface minimale, voir PLAN.md).
 - [x] `CHANGELOG.md` (sert de notes de release), écarts de distribution dans `DECISIONS.md` (§18 à 20)
 - [x] CI : capture PNG de l'interface (`Tools/Snapshot.cpp`), rapport de tests généré (`rapport-tests.md`), archive `PrismaEQ-<version>-macOS.zip` avec `LISEZMOI.txt`
 - [x] Release stable `v0.2.0` créée par la CI au premier build entièrement validé
-- [ ] Vérification sur la CI macOS, puis `RAPPORT_TESTS.md` et capture macOS versés dans le dépôt
+- [x] Vérifié sur la CI macOS 15.8.2 (commit 9f219de) :
+  - build, 14 tests, `auval -strict`, pluginval 5 (AU et VST3) et capture : tout réussi ;
+  - release **v0.2.0** publiée (archive, rapport, capture) et `RAPPORT_TESTS.md` versé dans le dépôt.
+- [x] Correction après la release : la sortie affichait « -0.00 dB » sur Mac (zéro négatif dû aux arrondis). Elle sera dans la prochaine version ; `latest` l'a déjà.
 
 ## Notes de passation (suite)
 - **Limites connues** (voir DECISIONS.md) : bandes proches de Nyquist (§6), changement de forme ou de pente non lissé (§9), bells d'ordre élevé reportées (§2), saisie en notes reportée (§15).
