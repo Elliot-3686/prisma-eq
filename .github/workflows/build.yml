@@ -1,0 +1,124 @@
+name: build
+
+on:
+  push:
+    branches-ignore: [ci-results]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 75
+    env:
+      CCACHE_DIR: ${{ github.workspace }}/.ccache
+      CCACHE_MAXSIZE: 2G
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tools
+        run: |
+          mkdir -p out
+          X=$(ls -d /Applications/Xcode_16*.app 2>/dev/null | sort -V | tail -1)
+          if [ -n "$X" ]; then sudo xcode-select -s "$X"; fi
+          brew install ninja ccache >/dev/null 2>&1 || true
+          { sw_vers; xcodebuild -version; cmake --version | head -1; uname -m; } > out/env.txt 2>&1
+          cat out/env.txt
+
+      - name: Cache (ccache + fetched sources)
+        uses: actions/cache@v4
+        with:
+          path: |
+            .ccache
+            build/_deps
+          key: v1-${{ runner.os }}-${{ hashFiles('CMakeLists.txt') }}-${{ github.sha }}
+          restore-keys: |
+            v1-${{ runner.os }}-${{ hashFiles('CMakeLists.txt') }}-
+            v1-${{ runner.os }}-
+
+      - name: Configure (universal arm64 + x86_64)
+        run: |
+          set -o pipefail
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+            -DPRISMA_COPY_PLUGIN=ON 2>&1 | tee out/configure.txt
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          cmake --build build -j 4 2>&1 | tee out/build-full.log
+
+      - name: Unit tests
+        id: tests
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          ctest --test-dir build --output-on-failure 2>&1 | tee out/tests.txt
+          ./build/prisma_tests --reporter console --success 2>/dev/null | grep -E "MESURE|REPORT" > out/measures.txt || true
+
+      - name: auval (AU)
+        id: auval
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          ls -la ~/Library/Audio/Plug-Ins/Components/ | tee out/components.txt
+          killall -9 AudioComponentRegistrar 2>/dev/null || true
+          auval -a 2>&1 | grep -i prsm | tee out/auval-list.txt || true
+          auval -strict -v aufx PrEq Prsm 2>&1 | tee out/auval.txt
+          grep -q "AU VALIDATION SUCCEEDED" out/auval.txt
+
+      - name: pluginval (AU + VST3, strictness 5)
+        id: pluginval
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          curl -sSL -o pv.zip https://github.com/Tracktion/pluginval/releases/download/v1.0.4/pluginval_macOS.zip
+          unzip -q pv.zip
+          PV=pluginval.app/Contents/MacOS/pluginval
+          VST3=$(find build -name "*.vst3" -maxdepth 6 -type d | head -1)
+          AU=$(find ~/Library/Audio/Plug-Ins/Components -name "Prisma*.component" -maxdepth 1 | head -1)
+          $PV --strictness-level 5 --validate-in-process --timeout-ms 600000 --output-dir out/pluginval "$VST3" 2>&1 | tee out/pluginval-vst3.txt
+          $PV --strictness-level 5 --validate-in-process --timeout-ms 600000 --output-dir out/pluginval "$AU" 2>&1 | tee out/pluginval-au.txt
+
+      - name: Package & release
+        if: steps.build.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p pkg
+          cp -R ~/Library/Audio/Plug-Ins/Components/Prisma*.component pkg/ 2>/dev/null || true
+          find build -name "*.vst3" -maxdepth 6 -type d -exec cp -R {} pkg/ \;
+          find build -name "*.app" -path "*Standalone*" -maxdepth 6 -type d -exec cp -R {} pkg/ \;
+          ditto -c -k --keepParent pkg PrismaEQ-macOS.zip
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest PrismaEQ-macOS.zip --target "${{ github.sha }}" --prerelease \
+            --title "Prisma EQ — dernière compilation" \
+            --notes "Compilé automatiquement depuis ${{ github.sha }} (AU + VST3 + Standalone, universel). Voir le README pour l'installation."
+
+      - name: Publish CI results to branch ci-results
+        if: always()
+        run: |
+          echo "sha=${{ github.sha }} build=${{ steps.build.outcome }} tests=${{ steps.tests.outcome }} auval=${{ steps.auval.outcome }} pluginval=${{ steps.pluginval.outcome }}" > out/summary.txt
+          if [ -f out/build-full.log ]; then
+            grep -E "error:|warning:|FAILED" out/build-full.log | sort -u | head -300 > out/build-errors.txt || true
+            tail -c 60000 out/build-full.log > out/build-tail.txt
+            rm out/build-full.log
+          fi
+          cd out
+          git init -q
+          git checkout -q -b ci-results
+          git add -A
+          git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "CI ${{ github.sha }}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-results
