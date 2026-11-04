@@ -2,7 +2,7 @@
 #include "Plugin/PluginProcessor.h"
 
 PrismaEditor::PrismaEditor (PrismaProcessor& p)
-    : AudioProcessorEditor (p), processor (p)
+    : AudioProcessorEditor (p)
 {
     setResizable (true, true);
     setResizeLimits (640, 360, 2400, 1400);

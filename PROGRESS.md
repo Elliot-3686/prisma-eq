@@ -8,7 +8,11 @@ Budget accordé : **33 $** (phases 1–2 + interface minimale, voir PLAN.md).
 - [x] Section de sortie temps réel : gain, pan L/R ou M/S, inversion de phase, bypass doux (fondus de 20 ms)
 - [x] Cœur DSP `prisma_dsp` sans JUCE + tests Catch2
 - [x] CI macOS : build universel, tests, auval, pluginval 5, release `latest`
-- [ ] Vérification sur la CI macOS (dès que le dépôt existe)
+- [x] Vérifié sur la CI macOS 15.8 / Xcode 16.4 (commit cc02223) :
+  - build universel arm64 + x86_64 et 4 tests passés ;
+  - `auval -strict -v aufx PrEq Prsm` : **AU VALIDATION SUCCEEDED** ;
+  - pluginval niveau 5 : **SUCCESS** sur l'AU et sur le VST3 ;
+  - sous Linux aussi, pluginval niveau 5 passe sur le VST3.
 
 ## Phase 2 — Moteur Zero Latency
 - [ ] Formes, pentes fractionnaires, placement L/R/M/S, lissage anti-zipper, gain auto — avec tests de mesure
