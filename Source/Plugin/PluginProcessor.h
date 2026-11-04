@@ -2,6 +2,7 @@
 
 #include <juce_audio_processors/juce_audio_processors.h>
 #include "DSP/DspBasics.h"
+#include "DSP/EqEngine.h"
 #include "Params/ParameterLayout.h"
 
 class PrismaProcessor final : public juce::AudioProcessor
@@ -40,9 +41,14 @@ public:
     /// Saved-state format version (bump + migrate in setStateInformation).
     static constexpr int kStateVersion = 1;
 
+    /// Réglages courants d'une bande, lus depuis l'APVTS (thread quelconque, sans allocation).
+    prisma::dsp::BandSettings readBand (int index) const noexcept;
+    double getGainScale() const noexcept { return out.gainScale->load() / 100.0; }
+
 private:
     template <typename Sample>
-    void processOutput (juce::AudioBuffer<Sample>&);
+    void processAll (juce::AudioBuffer<Sample>&);
+    void pushParameters() noexcept;
 
     juce::AudioProcessorValueTreeState state;
 
@@ -53,9 +59,30 @@ private:
         std::atomic<float>* pan = nullptr;
         std::atomic<float>* panMode = nullptr;
         std::atomic<float>* invert = nullptr;
+        std::atomic<float>* autoGain = nullptr;
+        std::atomic<float>* gainScale = nullptr;
     } out;
 
-    prisma::dsp::OnePoleSmoother gainSmoother, panSmoother;
+    struct BandPtrs
+    {
+        std::atomic<float>* used = nullptr;
+        std::atomic<float>* on = nullptr;
+        std::atomic<float>* shape = nullptr;
+        std::atomic<float>* slope = nullptr;
+        std::atomic<float>* brick = nullptr;
+        std::atomic<float>* freq = nullptr;
+        std::atomic<float>* gain = nullptr;
+        std::atomic<float>* q = nullptr;
+        std::atomic<float>* place = nullptr;
+        std::atomic<float>* gainQ = nullptr;
+    };
+    std::array<BandPtrs, prisma::params::kNumBands> bandPtrs;
+
+    static constexpr int kChunk = 512;
+    std::array<double, 2 * kChunk> dry {};
+    prisma::dsp::EqEngine engine;
+
+    prisma::dsp::OnePoleSmoother gainSmoother, panSmoother, autoGainSmoother;
     prisma::dsp::LinearRamp bypassRamp, invertRamp;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PrismaProcessor)

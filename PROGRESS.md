@@ -15,10 +15,22 @@ Budget accordé : **33 $** (phases 1–2 + interface minimale, voir PLAN.md).
   - sous Linux aussi, pluginval niveau 5 passe sur le VST3.
 
 ## Phase 2 — Moteur Zero Latency
-- [ ] Formes, pentes fractionnaires, placement L/R/M/S, lissage anti-zipper, gain auto — avec tests de mesure
+- [x] `AnalogPrototype` (10 formes, Butterworth, shelves d'ordre élevé, Oustaloup), `BiquadDesign` (matched Vicanek), `EqEngine` (24 bandes, TDF-II double, lissage + interpolation des coefficients, L/R/M/S, gain auto)
+- [x] Branché dans `PrismaProcessor` (gain scale, gain auto, bypass doux sur le signal sec réel)
+- [x] Tests de mesure (Linux, `./build/prisma_tests | grep MESURE`) :
+  - magnitude contre l'analogique, 10 formes × 5 fréquences d'échantillonnage : ≤ 0,62 dB pour f0 ≤ fs/16 ; écarts près de Nyquist documentés (DECISIONS.md §6) ;
+  - pentes 6 → 96 dB/oct par pas de 1,5 : erreur max 0,33 dB/oct ;
+  - null test 24 bandes à 0 dB : −319 dB ; passe-tout : |H| = 1 à 1e−12 dB ;
+  - zipper : −112,7 dB (44,1 kHz), −108,4 dB (96 kHz) ;
+  - blocs 1 → 4096 et tailles aléatoires : rendu identique au bit près ;
+  - 0 allocation dans le traitement (`operator new` remplacé) ;
+  - placement L/R/M/S vérifié ; gain auto cohérent.
+- [x] pluginval niveau 5 sur le VST3 sous Linux : SUCCESS
 
 ## Interface minimale
-- [ ] Afficheur, points déplaçables, bandeau de bande, barre du bas
+- [x] Afficheur (grille Hz/dB ±3/6/12/30, courbe jaune exacte, courbe de la bande sélectionnée), points déplaçables, molette Q/pente, double-clic = nouvelle cloche, clic droit = forme/pente/placement/active/supprimer
+- [x] Bandeau de la bande (saisie directe) et barre du bas (mode, échelle, sortie, échelle de gain, gain auto, phase, bypass)
+- [x] Rendu à la demande (écouteurs de paramètres + minuterie à 30 Hz qui ne redessine que si nécessaire)
 
 ## Notes de passation pour la phase 2 (moteur Zero Latency)
 Ordre conseillé (chaque étape avec son test Catch2 qui affiche `MESURE …`) :

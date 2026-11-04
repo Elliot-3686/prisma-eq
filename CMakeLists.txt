@@ -25,6 +25,9 @@ include(FetchContent)
 # ─── DSP core: plain C++20, no JUCE → tests build in seconds ────────────────
 add_library(prisma_dsp STATIC
     Source/DSP/DspInfo.cpp
+    Source/DSP/AnalogPrototype.cpp
+    Source/DSP/BiquadDesign.cpp
+    Source/DSP/EqEngine.cpp
 )
 target_include_directories(prisma_dsp PUBLIC Source)
 if(MSVC)
@@ -67,7 +70,9 @@ if(PRISMA_BUILD_PLUGIN)
     target_sources(PrismaEQ PRIVATE
         Source/Params/ParameterLayout.cpp
         Source/Plugin/PluginProcessor.cpp
-        Source/Plugin/PluginEditor.cpp)
+        Source/Plugin/PluginEditor.cpp
+        Source/UI/ResponseDisplay.cpp
+        Source/UI/Panels.cpp)
 
     target_compile_definitions(PrismaEQ PUBLIC
         JUCE_WEB_BROWSER=0
@@ -96,7 +101,8 @@ if(PRISMA_BUILD_TESTS)
     FetchContent_MakeAvailable(Catch2)
 
     add_executable(prisma_tests
-        Tests/DspBasicsTests.cpp)
+        Tests/DspBasicsTests.cpp
+        Tests/EqTests.cpp)
     target_link_libraries(prisma_tests PRIVATE prisma_dsp Catch2::Catch2WithMain)
 
     enable_testing()
