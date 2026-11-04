@@ -120,3 +120,26 @@ Tests/           Catch2 : réponse, pentes, null, zipper, allocations, fréq. d'
    - dans le dépôt : Settings › Actions › General › « Read and write permissions ».
 2. Donnez-moi son nom. Je pousse `CLAUDE.md`, ce plan et le squelette.
 3. **Recommandé pour le budget** : continuez dans une **nouvelle session** ouverte sur `prisma-eq`. Cette conversation-ci porte tout l'historique de Spectre, donc chaque étape y coûte plus cher. La nouvelle session repartira de `CLAUDE.md` et `PLAN.md`.
+
+## Suite : chiffrage des phases 3 à 10 (novembre 2026)
+> **Reconstitué sans le cahier des charges**, qui n'est pas dans le dépôt. Les phases 4, 6, 7, 8 et 9 sont nommées plus haut dans ce plan. Le contenu des phases 3, 5 et 10 est déduit des fonctionnalités prévues. À corriger avec le cahier.
+
+**Base du chiffrage.** La phase 2, l'interface minimale et la clôture étaient estimées à 27 $ ; elles ont coûté environ 22 $ (estimation, faute de compteur). Chaque phase compte une session neuve ouverte sur le dépôt, tests de mesure et vérification sur la CI macOS compris.
+
+| Phase | Contenu | Estimation | Risque |
+|---|---|---|---|
+| 3 — Analyseur et interface complète | Analyseur FFT temps réel (pré/post, side-chain, gel), solo de bande, annuler/rétablir, A/B, sélection multiple, agrandissement. Rattrapages de la phase 2 : fondu au changement de forme ou de pente, saisie en notes, interaction gain-Q mémorisée | 12–16 $ | faible |
+| 4 — Natural Phase et Linear Phase | FIR calculé hors du thread audio, convolution FFT par partitions, fondu entre filtres, latence rapportée à l'hôte, vrai brickwall ; tests de phase et de latence | 18–25 $ | élevé |
+| 5 — Presets et EQ Match | Format de preset original, presets d'usine, navigateur ; EQ Match (capture de spectre, ajustement automatique des bandes) | 8–12 $ | moyen |
+| 6 — Dynamique | Bandes dynamiques (seuil, plage, attaque, relâchement, seuil auto), side-chain AU ; Spectral Dynamics en STFT | 18–24 $ | élevé |
+| 7 — MIDI Learn | Apprentissage MIDI ; composant `aumf` « Prisma EQ MIDI » validé par `auval -v aumf` | 5–7 $ | faible |
+| 8 — Liste d'instances | Registre en mémoire partagée sans verrou, liste dans l'interface, cas des AU hors processus | 8–12 $ | élevé |
+| 9 — Character | Saturations suréchantillonnées (Subtle, Warm), réglage dans `Tuning.h` ; tests de THD et d'aliasing | 6–9 $ | moyen |
+| 10 — Surround et version 1.0 | Dispositions jusqu'au 7.1.4, optimisation CPU (SIMD, objectif 24 bandes × 50 instances), release 1.0 | 10–14 $ | moyen |
+| **Total** | | **85–119 $** | |
+
+**Recommandations.**
+- Une phase par session neuve. Prévoir 20 % de marge pour les phases 4, 6 et 8, les plus risquées.
+- Pour une 1.0 « essentielle » utile dans Logic, enchaîner les phases 3, 4, 5 et 6 (≈ 56–77 $) et reporter les phases 7 à 10.
+- Le reliquat de l'enveloppe actuelle (quelques dollars) ne suffit pas pour ouvrir une phase.
+- Message de départ conseillé pour chaque session : « Lis CLAUDE.md, PLAN.md et PROGRESS.md. Réalise la phase N avec ses tests de mesure, vérifie sur la CI macOS. Budget : X $. »
