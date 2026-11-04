@@ -32,6 +32,18 @@ Budget accordé : **33 $** (phases 1–2 + interface minimale, voir PLAN.md).
 - [x] Bandeau de la bande (saisie directe) et barre du bas (mode, échelle, sortie, échelle de gain, gain auto, phase, bypass)
 - [x] Rendu à la demande (écouteurs de paramètres + minuterie à 30 Hz qui ne redessine que si nécessaire)
 
+## Vérification CI macOS 15.8.2 (commit 09199e3)
+- build universel arm64 + x86_64 sans erreur ni avertissement ; 14 tests passés, mesures identiques à Linux ;
+- `auval -strict -v aufx PrEq Prsm` : **AU VALIDATION SUCCEEDED** ;
+- pluginval niveau 5 : **SUCCESS** sur l'AU (un seul avertissement bénin : « Current program is -1 ») et sur le VST3 ;
+- release `latest` mise à jour (AU + VST3 + Standalone).
+
+## Notes de passation (suite)
+- **Clôture** (non faite) : README d'installation dans Logic (`xattr -dr com.apple.quarantine`, rescan), rapport de tests, capture d'interface dans la CI.
+- **Limites connues** (voir DECISIONS.md) : bandes proches de Nyquist (§6), changement de forme ou de pente non lissé (§9), bells d'ordre élevé reportées (§2), saisie en notes reportée (§15).
+- **Linux** : un conteneur neuf doit installer les paquets X11/ALSA avant la compilation de JUCE :
+  `apt-get install libasound2-dev libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxext-dev libxcomposite-dev libfreetype-dev libfontconfig1-dev libgl1-mesa-dev libcurl4-openssl-dev`.
+
 ## Notes de passation pour la phase 2 (moteur Zero Latency)
 Ordre conseillé (chaque étape avec son test Catch2 qui affiche `MESURE …`) :
 1. `AnalogPrototype` : H(s) exact de chaque forme (RBJ Cookbook, forme analogique) + évaluation complexe de la réponse en fréquence (sert aux tests ET à la courbe de l'interface).
