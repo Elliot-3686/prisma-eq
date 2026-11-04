@@ -13,6 +13,7 @@ public:
     explicit PrismaEditor (PrismaProcessor&);
     void paint (juce::Graphics&) override;
     void resized() override;
+    void selectBand (int band) { display.selectBand (band); }
 
 private:
     prisma::ui::ResponseDisplay display;

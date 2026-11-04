@@ -66,6 +66,16 @@ jobs:
           ctest --test-dir build --output-on-failure 2>&1 | tee out/tests.txt
           ./build/prisma_tests --reporter console --success 2>/dev/null | grep -E "MESURE|REPORT" > out/measures.txt || true
 
+      - name: Interface snapshot (PNG)
+        id: snapshot
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          SNAP=$(find build -maxdepth 6 -path "*PrismaSnapshot_artefacts*" -type f -perm -u+x -name "*Snapshot" | head -1)
+          "$SNAP" "$PWD/out/interface.png" 2>&1 | tee out/snapshot.txt
+          test -s out/interface.png
+
       - name: auval (AU)
         id: auval
         if: steps.build.outcome == 'success'
@@ -92,20 +102,83 @@ jobs:
           $PV --strictness-level 5 --validate-in-process --timeout-ms 600000 --output-dir out/pluginval "$VST3" 2>&1 | tee out/pluginval-vst3.txt
           $PV --strictness-level 5 --validate-in-process --timeout-ms 600000 --output-dir out/pluginval "$AU" 2>&1 | tee out/pluginval-au.txt
 
+      - name: Test report
+        if: always()
+        run: |
+          VERSION=$(sed -nE 's/^set\(PRISMA_VERSION +([0-9.]+)\).*/\1/p' CMakeLists.txt)
+          verdict () { case "$1" in success) echo "✅ réussi";; skipped|"") echo "— non exécuté";; *) echo "❌ échec";; esac; }
+          T=$(grep -Eo '[0-9]+% tests passed[^|]*' out/tests.txt 2>/dev/null | head -1)
+          {
+            echo "# Rapport de tests — Prisma EQ $VERSION"
+            echo
+            echo "Généré automatiquement par la CI macOS (\`.github/workflows/build.yml\`)."
+            echo
+            echo "- Commit : \`${{ github.sha }}\`"
+            echo "- Date : $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo "- Machine : $(sw_vers -productName) $(sw_vers -productVersion), $(xcodebuild -version | head -1), $(uname -m)"
+            echo
+            echo "## Verdicts"
+            echo
+            echo "| Étape | Résultat |"
+            echo "|---|---|"
+            echo "| Build universel arm64 + x86_64 | $(verdict '${{ steps.build.outcome }}') |"
+            echo "| Tests unitaires Catch2 | $(verdict '${{ steps.tests.outcome }}') ${T:+($T)} |"
+            echo "| \`auval -strict -v aufx PrEq Prsm\` | $(verdict '${{ steps.auval.outcome }}') |"
+            echo "| pluginval niveau 5, AU et VST3 | $(verdict '${{ steps.pluginval.outcome }}') |"
+            echo "| Capture de l'interface | $(verdict '${{ steps.snapshot.outcome }}') |"
+            echo
+            echo "## Mesures"
+            echo
+            echo "Chaque ligne est affichée par un test Catch2 (préfixe \`MESURE\`). Seuils et écarts assumés : voir \`DECISIONS.md\`."
+            echo
+            echo '```'
+            sed 's/^.*MESURE /MESURE /' out/measures.txt 2>/dev/null
+            echo '```'
+          } > out/rapport-tests.md
+
       - name: Package & release
         if: steps.build.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p pkg
-          cp -R ~/Library/Audio/Plug-Ins/Components/Prisma*.component pkg/ 2>/dev/null || true
-          find build -name "*.vst3" -maxdepth 6 -type d -exec cp -R {} pkg/ \;
-          find build -name "*.app" -path "*Standalone*" -maxdepth 6 -type d -exec cp -R {} pkg/ \;
-          ditto -c -k --keepParent pkg PrismaEQ-macOS.zip
+          VERSION=$(sed -nE 's/^set\(PRISMA_VERSION +([0-9.]+)\).*/\1/p' CMakeLists.txt)
+          PKG="Prisma EQ $VERSION"
+          ZIP="PrismaEQ-$VERSION-macOS.zip"
+          mkdir -p "$PKG"
+          cp -R ~/Library/Audio/Plug-Ins/Components/Prisma*.component "$PKG/" 2>/dev/null || true
+          find build -name "*.vst3" -maxdepth 6 -type d -exec cp -R {} "$PKG/" \;
+          find build -name "*.app" -path "*Standalone*" -maxdepth 6 -type d -exec cp -R {} "$PKG/" \;
+          cp out/rapport-tests.md "$PKG/Rapport de tests.md"
+          cat > "$PKG/LISEZMOI.txt" <<TXT
+          Prisma EQ $VERSION — installation dans Logic Pro (macOS 11 ou plus récent)
+
+          1. Copiez « Prisma EQ.component » dans ~/Library/Audio/Plug-Ins/Components/
+             (Finder : Aller > Aller au dossier…, puis collez le chemin).
+             Pour d'autres logiciels : « Prisma EQ.vst3 » dans ~/Library/Audio/Plug-Ins/VST3/
+          2. Dans le Terminal (le plugin n'est pas notarié) :
+             xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/Components/"Prisma EQ.component"
+          3. Logic Pro > Réglages > Gestionnaire de modules : sélectionnez Prisma EQ,
+             puis « Réinitialiser et réanalyser la sélection ».
+          4. Sur une piste : Audio Units > Prisma Audio > Prisma EQ.
+
+          Aide et dépannage : https://github.com/${{ github.repository }}#readme
+          TXT
+          ditto -c -k --keepParent "$PKG" "$ZIP"
+          ASSETS=("$ZIP" out/rapport-tests.md)
+          if [ -f out/interface.png ]; then ASSETS+=(out/interface.png); fi
+
           gh release delete latest --yes --cleanup-tag || true
-          gh release create latest PrismaEQ-macOS.zip --target "${{ github.sha }}" --prerelease \
+          gh release create latest "${ASSETS[@]}" --target "${{ github.sha }}" --prerelease \
             --title "Prisma EQ — dernière compilation" \
-            --notes "Compilé automatiquement depuis ${{ github.sha }} (AU + VST3 + Standalone, universel). Voir le README pour l'installation."
+            --notes "Compilé automatiquement depuis ${{ github.sha }} (AU + VST3 + Standalone, universel). Les versions stables sont les releases vX.Y.Z. Installation : voir le README."
+
+          # Release stable : une seule fois par version, et seulement si tout est validé.
+          if [ "${{ steps.tests.outcome }}" = success ] && [ "${{ steps.auval.outcome }}" = success ] \
+             && [ "${{ steps.pluginval.outcome }}" = success ] && ! gh release view "v$VERSION" >/dev/null 2>&1; then
+            awk -v v="$VERSION" '/^## /{p = (index($0, "## " v) == 1)} p' CHANGELOG.md > notes.md
+            gh release create "v$VERSION" "${ASSETS[@]}" --target "${{ github.sha }}" \
+              --title "Prisma EQ $VERSION" --notes-file notes.md
+          fi
 
       - name: Publish CI results to branch ci-results
         if: always()

@@ -35,4 +35,15 @@ Chaque écart est assumé, justifié et, quand il concerne la qualité, mesuré 
 ## Interface minimale
 14. Les modes Natural Phase et Linear Phase sont sélectionnables, mais le moteur reste Zero Latency (infobulle explicite).
 15. La saisie directe des fréquences accepte « 1,5 kHz », « 1.5k » ou « 250 ». La saisie en notes (« A4 », `NoteParsing`) est reportée.
-16. Les points des formes sans gain (coupes, encoche, passe-bande, passe-tout) sont placés sur la ligne 0 dB. La molette règle la pente pour les coupes, et le Q pour les autres formes.
+16. La courbe globale additionne toutes les bandes actives, quel que soit leur placement (L/R/M/S). Des courbes séparées par canal viendront avec l'analyseur.
+17. Les points des formes sans gain (coupes, encoche, passe-bande, passe-tout) sont placés sur la ligne 0 dB. La molette règle la pente pour les coupes, et le Q pour les autres formes.
+
+## Distribution (clôture)
+18. **Signature** : le plugin n'est ni signé par un Developer ID ni notarié, car cela demande un compte Apple Developer payant.
+    - Les binaires portent seulement la signature ad hoc posée par l'éditeur de liens (option JUCE `-adhoc_codesign`).
+    - L'utilisateur lance donc `xattr -dr com.apple.quarantine` après le téléchargement (README).
+19. **Releases** :
+    - `latest` est une préversion recompilée à chaque push.
+    - `vX.Y.Z` est créée automatiquement, une seule fois par version, au premier build où les tests, auval et pluginval passent tous.
+    - Ses notes sont la section correspondante de `CHANGELOG.md`.
+20. **Capture de l'interface** : un petit outil (`Tools/Snapshot.cpp`, cible `PrismaSnapshot`, architecture native seulement) instancie l'éditeur hors écran avec des bandes de démonstration. La CI publie l'image `interface.png`.

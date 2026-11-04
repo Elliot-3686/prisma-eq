@@ -38,8 +38,14 @@ Budget accordé : **33 $** (phases 1–2 + interface minimale, voir PLAN.md).
 - pluginval niveau 5 : **SUCCESS** sur l'AU (un seul avertissement bénin : « Current program is -1 ») et sur le VST3 ;
 - release `latest` mise à jour (AU + VST3 + Standalone).
 
+## Clôture (version 0.2.0)
+- [x] README : fonctionnalités, installation dans Logic en 5 étapes (`xattr`, rescan), dépannage (`auval`, `AudioComponentRegistrar`, signature ad hoc), utilisation, compilation
+- [x] `CHANGELOG.md` (sert de notes de release), écarts de distribution dans `DECISIONS.md` (§18 à 20)
+- [x] CI : capture PNG de l'interface (`Tools/Snapshot.cpp`), rapport de tests généré (`rapport-tests.md`), archive `PrismaEQ-<version>-macOS.zip` avec `LISEZMOI.txt`
+- [x] Release stable `v0.2.0` créée par la CI au premier build entièrement validé
+- [ ] Vérification sur la CI macOS, puis `RAPPORT_TESTS.md` et capture macOS versés dans le dépôt
+
 ## Notes de passation (suite)
-- **Clôture** (non faite) : README d'installation dans Logic (`xattr -dr com.apple.quarantine`, rescan), rapport de tests, capture d'interface dans la CI.
 - **Limites connues** (voir DECISIONS.md) : bandes proches de Nyquist (§6), changement de forme ou de pente non lissé (§9), bells d'ordre élevé reportées (§2), saisie en notes reportée (§15).
 - **Linux** : un conteneur neuf doit installer les paquets X11/ALSA avant la compilation de JUCE :
   `apt-get install libasound2-dev libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxext-dev libxcomposite-dev libfreetype-dev libfontconfig1-dev libgl1-mesa-dev libcurl4-openssl-dev`.

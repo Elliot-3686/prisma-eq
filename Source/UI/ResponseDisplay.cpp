@@ -123,6 +123,11 @@ namespace prisma::ui
                         juce::Justification::right);
         }
 
+        g.setColour (theme::textDim.withAlpha (0.6f));
+        g.setFont (juce::FontOptions (11.0f));
+        g.drawText (juce::String ("Prisma EQ ") + PRISMA_VERSION_STRING, juce::Rectangle<float> (6, 4, 160, 14),
+                    juce::Justification::left);
+
         // Réponse numérique exacte : produit des biquads de chaque bande active.
         const double fs = proc.getSampleRate() > 0 ? proc.getSampleRate() : 48000.0;
         const double scale = proc.getGainScale();

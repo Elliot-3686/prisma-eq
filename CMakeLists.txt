@@ -6,7 +6,7 @@ set(PRISMA_COMPANY_NAME     "Prisma Audio")
 set(PRISMA_MANUFACTURER     Prsm)           # 4 chars, at least one upper case
 set(PRISMA_PLUGIN_CODE      PrEq)           # 4 chars, unique per plugin
 set(PRISMA_BUNDLE_ID        com.prisma-audio.prisma-eq)
-set(PRISMA_VERSION          0.1.0)
+set(PRISMA_VERSION          0.2.0)
 
 project(PrismaEQ VERSION ${PRISMA_VERSION} LANGUAGES C CXX)
 
@@ -67,12 +67,13 @@ if(PRISMA_BUILD_PLUGIN)
         MICROPHONE_PERMISSION_ENABLED TRUE
         MICROPHONE_PERMISSION_TEXT  "Prisma EQ (version autonome) traite le son de l'entrée audio choisie.")
 
-    target_sources(PrismaEQ PRIVATE
+    set(PRISMA_PLUGIN_SOURCES
         Source/Params/ParameterLayout.cpp
         Source/Plugin/PluginProcessor.cpp
         Source/Plugin/PluginEditor.cpp
         Source/UI/ResponseDisplay.cpp
         Source/UI/Panels.cpp)
+    target_sources(PrismaEQ PRIVATE ${PRISMA_PLUGIN_SOURCES})
 
     target_compile_definitions(PrismaEQ PUBLIC
         JUCE_WEB_BROWSER=0
@@ -90,6 +91,27 @@ if(PRISMA_BUILD_PLUGIN)
             juce::juce_recommended_config_flags
             juce::juce_recommended_lto_flags
             juce::juce_recommended_warning_flags)
+endif()
+
+# ─── Capture PNG de l'interface (contrôle visuel en CI) ─────────────────────
+if(PRISMA_BUILD_PLUGIN)
+    juce_add_console_app(PrismaSnapshot PRODUCT_NAME "Prisma Snapshot")
+    target_sources(PrismaSnapshot PRIVATE Tools/Snapshot.cpp ${PRISMA_PLUGIN_SOURCES})
+    target_compile_definitions(PrismaSnapshot PRIVATE
+        JucePlugin_Name="${PRISMA_PRODUCT_NAME}"
+        JUCE_WEB_BROWSER=0
+        JUCE_USE_CURL=0
+        PRISMA_VERSION_STRING="${PRISMA_VERSION}")
+    target_link_libraries(PrismaSnapshot PRIVATE
+        prisma_dsp
+        juce::juce_audio_utils
+        juce::juce_dsp
+        juce::juce_recommended_config_flags
+        juce::juce_recommended_warning_flags)
+    if(APPLE)
+        # Outil de CI uniquement : architecture de la machine, pas de binaire universel.
+        set_target_properties(PrismaSnapshot PROPERTIES OSX_ARCHITECTURES ${CMAKE_HOST_SYSTEM_PROCESSOR})
+    endif()
 endif()
 
 # ─── Tests ──────────────────────────────────────────────────────────────────

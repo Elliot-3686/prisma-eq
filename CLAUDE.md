@@ -29,6 +29,9 @@ cmake --build build -j4 && ctest --test-dir build --output-on-failure
 # Tests seuls, sans JUCE (rapide)
 cmake -S . -B build-tests -G Ninja -DPRISMA_BUILD_PLUGIN=OFF && cmake --build build-tests && ./build-tests/prisma_tests
 ```
+- **Conteneur Linux neuf** : installer d'abord `libasound2-dev libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxext-dev libxcomposite-dev libfreetype-dev libfontconfig1-dev libgl1-mesa-dev libcurl4-openssl-dev`.
+- **Capture de l'interface** : `xvfb-run -a build/PrismaSnapshot_artefacts/Release/PrismaSnapshot capture.png` (la CI publie `interface.png`).
+- **Release stable** : incrémenter `PRISMA_VERSION` et ajouter sa section dans `CHANGELOG.md`. La CI crée `vX.Y.Z` au premier build entièrement validé (tests, auval, pluginval).
 - **macOS** : tout `git push` déclenche `.github/workflows/build.yml` (build universel, tests, `auval -v aufx PrEq Prsm`, pluginval niveau 5 sur AU et VST3, release `latest`).
 - **Résultats de la CI** : les journaux d'Actions ne sont pas lisibles depuis le conteneur. Le workflow publie donc tout sur la branche `ci-results`. Pour suivre un run :
   - état : `gh api repos/Elliot-3686/prisma-eq/commits/<sha>/check-runs` ;
