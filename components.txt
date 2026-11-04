@@ -1,0 +1,4 @@
+total 0
+drwx------+ 3 runner  staff   96 Nov  4 22:37 .
+drwx------+ 6 runner  staff  192 Nov  4 22:37 ..
+drwxr-xr-x  3 runner  staff   96 Nov  4 22:37 Prisma EQ.component

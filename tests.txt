@@ -1,0 +1,33 @@
+Test project /Users/runner/work/prisma-eq/prisma-eq/build
+      Start  1: Aucune allocation pendant le traitement
+ 1/14 Test  #1: Aucune allocation pendant le traitement .................................   Passed    0.03 sec
+      Start  2: Balance pan is unity at centre
+ 2/14 Test  #2: Balance pan is unity at centre ..........................................   Passed    0.01 sec
+      Start  3: Balayage rapide fréquence/gain/Q : bruit de modulation
+ 3/14 Test  #3: Balayage rapide fréquence/gain/Q : bruit de modulation .................   Passed    0.02 sec
+      Start  4: Flat Tilt : pente constante de 20 Hz à 20 kHz
+ 4/14 Test  #4: Flat Tilt : pente constante de 20 Hz à 20 kHz ..........................   Passed    0.01 sec
+      Start  5: Gain automatique : compensation de la courbe
+ 5/14 Test  #5: Gain automatique : compensation de la courbe ............................   Passed    0.01 sec
+      Start  6: Invariance à la taille des blocs (1 → 4096)
+ 6/14 Test  #6: Invariance à la taille des blocs (1 → 4096) ..........................   Passed    0.06 sec
+      Start  7: Linear ramp reaches its target in exactly the requested time
+ 7/14 Test  #7: Linear ramp reaches its target in exactly the requested time ............   Passed    0.01 sec
+      Start  8: Magnitude numérique contre prototype analogique
+ 8/14 Test  #8: Magnitude numérique contre prototype analogique ........................   Passed    0.53 sec
+      Start  9: Null test : bandes à 0 dB = entrée
+ 9/14 Test  #9: Null test : bandes à 0 dB = entrée ....................................   Passed    0.01 sec
+      Start 10: Passe-tout : magnitude unité et phase analogique à basse fréquence
+10/14 Test #10: Passe-tout : magnitude unité et phase analogique à basse fréquence ...   Passed    0.02 sec
+      Start 11: Pentes des coupes de 6 à 96 dB/oct (pas fractionnaires)
+11/14 Test #11: Pentes des coupes de 6 à 96 dB/oct (pas fractionnaires) ................   Passed    0.01 sec
+      Start 12: Placement L/R/M/S
+12/14 Test #12: Placement L/R/M/S .......................................................   Passed    0.02 sec
+      Start 13: Smoother converges without overshoot
+13/14 Test #13: Smoother converges without overshoot ....................................   Passed    0.01 sec
+      Start 14: dB conversions round-trip
+14/14 Test #14: dB conversions round-trip ...............................................   Passed    0.01 sec
+
+100% tests passed out of 14
+
+Total Test time (real) =   0.84 sec

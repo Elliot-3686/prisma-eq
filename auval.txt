@@ -1,0 +1,2507 @@
+
+    AU Validation Tool
+    Version: 1.10.0 
+    Copyright 2003-2019, Apple Inc. All Rights Reserved.
+    Specify -h (-help) for command options
+
+--------------------------------------------------
+VALIDATING AUDIO UNIT: 'aufx' - 'PrEq' - 'Prsm'
+--------------------------------------------------
+Manufacturer String: Prisma Audio
+AudioUnit Name: Prisma EQ
+Component Version: 0.2.0 (0x200)
+
+* * PASS
+--------------------------------------------------
+TESTING OPEN TIMES:
+COLD:
+Time to open AudioUnit:         7.196 ms
+WARM:
+Time to open AudioUnit:         1.844  ms
+This AudioUnit is a version 2 implementation.
+FIRST TIME:
+Time for initialization:        0.007 ms
+
+* * PASS
+--------------------------------------------------
+VERIFYING DEFAULT SCOPE FORMATS:
+Input Scope Bus Configuration:
+ Default Bus Count:1
+    Bus Name: EntrÃ©e
+    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+    Has Channel Layouts: 0x640001 0x650002 0x660002 0x670002 0x6A0002 
+    Default Layout:
+	Tag=0x650002, Num Chan Descs=0
+
+Output Scope Bus Configuration:
+ Default Bus Count:1
+    Bus Name: Sortie
+    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+    Has Channel Layouts: 0x640001 0x650002 0x660002 0x670002 0x6A0002 
+    Default Layout:
+	Tag=0x650002, Num Chan Descs=0
+
+* * PASS
+--------------------------------------------------
+VERIFYING REQUIRED PROPERTIES:
+
+* * PASS
+--------------------------------------------------
+VERIFYING RECOMMENDED PROPERTIES:
+  VERIFYING PROPERTY: Latency
+    PASS
+  VERIFYING PROPERTY: Tail Time
+    PASS
+  VERIFYING PROPERTY: Bypass Effect
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING OPTIONAL PROPERTIES:
+
+* * PASS
+--------------------------------------------------
+VERIFYING SPECIAL PROPERTIES:
+
+VERIFYING CUSTOM UI
+Cocoa Views Available: 1
+  JUCE_AUCocoaViewClass_7236d11700fac538
+    PASS
+
+HAS FACTORY PRESETS
+    ID:   0    Name: Untitled
+
+VERIFYING CLASS INFO
+    PASS
+
+TESTING HOST CALLBACKS
+    PASS
+
+* * PASS
+--------------------------------------------------
+PUBLISHED PARAMETER INFO:
+
+# # # 250 Global Scope Parameters:
+
+# # Parameters for clump: 1
+# Full Clump Name: Bande 1
+# Short (4 Chars limit) Clump Name: Bande 1
+Parameter ID:70453989
+Name: Bande 1 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:74565494
+Name: Bande 1 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:83196843
+Name: Bande 1 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:85848645
+Name: Bande 1 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:85981263
+Name: Bande 1 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:91985173
+Name: Bande 1 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:140939092
+Name: Bande 1 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:140952667
+Name: Bande 1 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:141386905
+Name: Bande 1 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704056763
+Name: Bande 1 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 2
+# Full Clump Name: Bande 2
+# Short (4 Chars limit) Clump Name: Bande 2
+Parameter ID:91986134
+Name: Bande 2 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:169568243
+Name: Bande 2 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:169581818
+Name: Bande 2 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:170016056
+Name: Bande 2 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704086554
+Name: Bande 2 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:957957670
+Name: Bande 2 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:962069175
+Name: Bande 2 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:970700524
+Name: Bande 2 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:973352326
+Name: Bande 2 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:973484944
+Name: Bande 2 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 3
+# Full Clump Name: Bande 3
+# Short (4 Chars limit) Clump Name: Bande 3
+Parameter ID:91987095
+Name: Bande 3 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:198197394
+Name: Bande 3 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:198210969
+Name: Bande 3 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:198645207
+Name: Bande 3 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704116345
+Name: Bande 3 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1845461351
+Name: Bande 3 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1849572856
+Name: Bande 3 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1858204205
+Name: Bande 3 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1860856007
+Name: Bande 3 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1860988625
+Name: Bande 3 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 4
+# Full Clump Name: Bande 4
+# Short (4 Chars limit) Clump Name: Bande 4
+Parameter ID:91988056
+Name: Bande 4 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:226826545
+Name: Bande 4 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:226840120
+Name: Bande 4 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:227274358
+Name: Bande 4 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:585481384
+Name: Bande 4 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:589592889
+Name: Bande 4 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:598224238
+Name: Bande 4 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:600876040
+Name: Bande 4 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:601008658
+Name: Bande 4 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704146136
+Name: Bande 4 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 5
+# Full Clump Name: Bande 5
+# Short (4 Chars limit) Clump Name: Bande 5
+Parameter ID:91989017
+Name: Bande 5 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:255455696
+Name: Bande 5 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:255469271
+Name: Bande 5 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:255903509
+Name: Bande 5 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704175927
+Name: Bande 5 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1472985065
+Name: Bande 5 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1477096570
+Name: Bande 5 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1485727919
+Name: Bande 5 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1488379721
+Name: Bande 5 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1488512339
+Name: Bande 5 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 6
+# Full Clump Name: Bande 6
+# Short (4 Chars limit) Clump Name: Bande 6
+Parameter ID:91989978
+Name: Bande 6 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:213005098
+Name: Bande 6 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:217116603
+Name: Bande 6 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:225747952
+Name: Bande 6 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:228399754
+Name: Bande 6 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:228532372
+Name: Bande 6 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:284084847
+Name: Bande 6 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:284098422
+Name: Bande 6 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:284532660
+Name: Bande 6 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704205718
+Name: Bande 6 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 7
+# Full Clump Name: Bande 7
+# Short (4 Chars limit) Clump Name: Bande 7
+Parameter ID:91990939
+Name: Bande 7 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:312713998
+Name: Bande 7 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:312727573
+Name: Bande 7 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:313161811
+Name: Bande 7 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704235509
+Name: Bande 7 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1100508779
+Name: Bande 7 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1104620284
+Name: Bande 7 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1113251633
+Name: Bande 7 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1115903435
+Name: Bande 7 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1116036053
+Name: Bande 7 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 8
+# Full Clump Name: Bande 8
+# Short (4 Chars limit) Clump Name: Bande 8
+Parameter ID:91991900
+Name: Bande 8 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:341343149
+Name: Bande 8 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:341356724
+Name: Bande 8 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:341790962
+Name: Bande 8 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704265300
+Name: Bande 8 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1988012460
+Name: Bande 8 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1992123965
+Name: Bande 8 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2000755314
+Name: Bande 8 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:2003407116
+Name: Bande 8 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:2003539734
+Name: Bande 8 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 9
+# Full Clump Name: Bande 9
+# Short (4 Chars limit) Clump Name: Bande 9
+Parameter ID:91992861
+Name: Bande 9 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:369972300
+Name: Bande 9 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:369985875
+Name: Bande 9 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:370420113
+Name: Bande 9 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704295091
+Name: Bande 9 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:728032493
+Name: Bande 9 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:732143998
+Name: Bande 9 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:740775347
+Name: Bande 9 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:743427149
+Name: Bande 9 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:743559767
+Name: Bande 9 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 10
+# Full Clump Name: Bande 10
+# Short (4 Chars limit) Clump Name: Bande 10
+Parameter ID:92014003
+Name: Bande 10 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704950493
+Name: Bande 10 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:925760643
+Name: Bande 10 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:929872148
+Name: Bande 10 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:938503497
+Name: Bande 10 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:941155299
+Name: Bande 10 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:941287917
+Name: Bande 10 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:999813622
+Name: Bande 10 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:999827197
+Name: Bande 10 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1000261435
+Name: Bande 10 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 11
+# Full Clump Name: Bande 11
+# Short (4 Chars limit) Clump Name: Bande 11
+Parameter ID:92014964
+Name: Bande 11 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:704980284
+Name: Bande 11 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1028442773
+Name: Bande 11 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1028456348
+Name: Bande 11 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1028890586
+Name: Bande 11 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1813264324
+Name: Bande 11 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1817375829
+Name: Bande 11 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1826007178
+Name: Bande 11 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1828658980
+Name: Bande 11 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1828791598
+Name: Bande 11 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 12
+# Full Clump Name: Bande 12
+# Short (4 Chars limit) Clump Name: Bande 12
+Parameter ID:92015925
+Name: Bande 12 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:553284357
+Name: Bande 12 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:557395862
+Name: Bande 12 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:566027211
+Name: Bande 12 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:568679013
+Name: Bande 12 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:568811631
+Name: Bande 12 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705010075
+Name: Bande 12 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1057071924
+Name: Bande 12 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1057085499
+Name: Bande 12 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1057519737
+Name: Bande 12 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 13
+# Full Clump Name: Bande 13
+# Short (4 Chars limit) Clump Name: Bande 13
+Parameter ID:92016886
+Name: Bande 13 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705039866
+Name: Bande 13 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1085701075
+Name: Bande 13 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1085714650
+Name: Bande 13 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1086148888
+Name: Bande 13 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1440788038
+Name: Bande 13 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1444899543
+Name: Bande 13 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1453530892
+Name: Bande 13 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1456182694
+Name: Bande 13 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1456315312
+Name: Bande 13 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 14
+# Full Clump Name: Bande 14
+# Short (4 Chars limit) Clump Name: Bande 14
+Parameter ID:92017847
+Name: Bande 14 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:180808071
+Name: Bande 14 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:184919576
+Name: Bande 14 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:193550925
+Name: Bande 14 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:196202727
+Name: Bande 14 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:196335345
+Name: Bande 14 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705069657
+Name: Bande 14 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1114330226
+Name: Bande 14 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1114343801
+Name: Bande 14 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1114778039
+Name: Bande 14 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 15
+# Full Clump Name: Bande 15
+# Short (4 Chars limit) Clump Name: Bande 15
+Parameter ID:92018808
+Name: Bande 15 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705099448
+Name: Bande 15 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1068311752
+Name: Bande 15 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1072423257
+Name: Bande 15 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1081054606
+Name: Bande 15 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1083706408
+Name: Bande 15 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1083839026
+Name: Bande 15 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1142959377
+Name: Bande 15 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1142972952
+Name: Bande 15 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1143407190
+Name: Bande 15 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 16
+# Full Clump Name: Bande 16
+# Short (4 Chars limit) Clump Name: Bande 16
+Parameter ID:92019769
+Name: Bande 16 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705129239
+Name: Bande 16 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1171588528
+Name: Bande 16 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1171602103
+Name: Bande 16 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1172036341
+Name: Bande 16 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1955815433
+Name: Bande 16 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1959926938
+Name: Bande 16 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1968558287
+Name: Bande 16 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1971210089
+Name: Bande 16 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1971342707
+Name: Bande 16 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 17
+# Full Clump Name: Bande 17
+# Short (4 Chars limit) Clump Name: Bande 17
+Parameter ID:92020730
+Name: Bande 17 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:695835466
+Name: Bande 17 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:699946971
+Name: Bande 17 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705159030
+Name: Bande 17 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:708578320
+Name: Bande 17 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:711230122
+Name: Bande 17 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:711362740
+Name: Bande 17 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1200217679
+Name: Bande 17 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1200231254
+Name: Bande 17 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1200665492
+Name: Bande 17 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 18
+# Full Clump Name: Bande 18
+# Short (4 Chars limit) Clump Name: Bande 18
+Parameter ID:92021691
+Name: Bande 18 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705188821
+Name: Bande 18 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1228846830
+Name: Bande 18 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1228860405
+Name: Bande 18 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1229294643
+Name: Bande 18 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1583339147
+Name: Bande 18 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1587450652
+Name: Bande 18 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1596082001
+Name: Bande 18 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1598733803
+Name: Bande 18 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1598866421
+Name: Bande 18 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 19
+# Full Clump Name: Bande 19
+# Short (4 Chars limit) Clump Name: Bande 19
+Parameter ID:92022652
+Name: Bande 19 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:323359180
+Name: Bande 19 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:327470685
+Name: Bande 19 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:336102034
+Name: Bande 19 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:338753836
+Name: Bande 19 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:338886454
+Name: Bande 19 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705218612
+Name: Bande 19 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1257475981
+Name: Bande 19 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1257489556
+Name: Bande 19 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1257923794
+Name: Bande 19 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 20
+# Full Clump Name: Bande 20
+# Short (4 Chars limit) Clump Name: Bande 20
+Parameter ID:92043794
+Name: Bande 20 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:521087330
+Name: Bande 20 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:525198835
+Name: Bande 20 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:533830184
+Name: Bande 20 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:536481986
+Name: Bande 20 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:536614604
+Name: Bande 20 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705874014
+Name: Bande 20 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1887317303
+Name: Bande 20 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1887330878
+Name: Bande 20 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1887765116
+Name: Bande 20 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 21
+# Full Clump Name: Bande 21
+# Short (4 Chars limit) Clump Name: Bande 21
+Parameter ID:92044755
+Name: Bande 21 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705903805
+Name: Bande 21 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1408591011
+Name: Bande 21 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1412702516
+Name: Bande 21 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1421333865
+Name: Bande 21 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1423985667
+Name: Bande 21 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1424118285
+Name: Bande 21 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1915946454
+Name: Bande 21 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1915960029
+Name: Bande 21 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1916394267
+Name: Bande 21 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 22
+# Full Clump Name: Bande 22
+# Short (4 Chars limit) Clump Name: Bande 22
+Parameter ID:92045716
+Name: Bande 22 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:148611044
+Name: Bande 22 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:152722549
+Name: Bande 22 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:161353898
+Name: Bande 22 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:164005700
+Name: Bande 22 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:164138318
+Name: Bande 22 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705933596
+Name: Bande 22 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1944575605
+Name: Bande 22 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1944589180
+Name: Bande 22 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1945023418
+Name: Bande 22 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 23
+# Full Clump Name: Bande 23
+# Short (4 Chars limit) Clump Name: Bande 23
+Parameter ID:92046677
+Name: Bande 23 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705963387
+Name: Bande 23 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1036114725
+Name: Bande 23 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1040226230
+Name: Bande 23 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1048857579
+Name: Bande 23 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1051509381
+Name: Bande 23 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1051641999
+Name: Bande 23 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1973204756
+Name: Bande 23 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1973218331
+Name: Bande 23 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1973652569
+Name: Bande 23 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 24
+# Full Clump Name: Bande 24
+# Short (4 Chars limit) Clump Name: Bande 24
+Parameter ID:92047638
+Name: Bande 24 Q
+Parameter Type: Generic
+Values: Minimum = 0.025, Default = 1.00, Maximum = 40.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:705993178
+Name: Bande 24 active
+Parameter Type: Boolean
+Values: Minimum = Off, Default = On, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1923618406
+Name: Bande 24 brickwall
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1927729911
+Name: Bande 24 interaction gain-Q
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1936361260
+Name: Bande 24 placement
+Parameter Type: Indexed
+Values: Minimum = Stéréo, Default = Stéréo, Maximum = Side
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Stéréo
+Value: 1,  String: Gauche
+Value: 2,  String: Droite
+Value: 3,  String: Mid
+Value: 4,  String: Side
+  -parameter PASS
+
+Parameter ID:1939013062
+Name: Bande 24 forme
+Parameter Type: Indexed
+Values: Minimum = Cloche, Default = Cloche, Maximum = Passe-tout
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 10
+Value: 0,  String: Cloche
+Value: 1,  String: Plateau grave
+Value: 2,  String: Coupe-bas
+Value: 3,  String: Plateau aigu
+Value: 4,  String: Coupe-haut
+Value: 5,  String: Encoche
+Value: 6,  String: Passe-bande
+Value: 7,  String: Plateau incliné
+Value: 8,  String: Inclinaison
+Value: 9,  String: Passe-tout
+  -parameter PASS
+
+Parameter ID:1939145680
+Name: Bande 24 pente
+Parameter Type: Generic
+Values: Minimum = 0.00, Default = 12.00, Maximum = 96.00
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2001833907
+Name: Bande 24 fréquence
+Parameter Type: Generic
+Values: Minimum = 5.00 Hz, Default = 1.00 kHz, Maximum = 30.0 kHz
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2001847482
+Name: Bande 24 gain
+Parameter Type: Generic
+Values: Minimum = -30.00 dB, Default = 0.00 dB, Maximum = 30.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2002281720
+Name: Bande 24 utilisée
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+
+# # Parameters for clump: 25
+# Full Clump Name: Sortie
+# Short (4 Chars limit) Clump Name: Sortie
+Parameter ID:3357091
+Name: Mode de traitement
+Parameter Type: Indexed
+Values: Minimum = Zero Latency, Default = Zero Latency, Maximum = Linear Phase
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 3
+Value: 0,  String: Zero Latency
+Value: 1,  String: Natural Phase
+Value: 2,  String: Linear Phase
+  -parameter PASS
+
+Parameter ID:463850801
+Name: Inversion de phase
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:547453100
+Name: Résolution (phase linéaire)
+Parameter Type: Indexed
+Values: Minimum = Low, Default = Medium, Maximum = Maximum
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 5
+Value: 0,  String: Low
+Value: 1,  String: Medium
+Value: 2,  String: High
+Value: 3,  String: Very High
+Value: 4,  String: Maximum
+  -parameter PASS
+
+Parameter ID:773352680
+Name: Bypass
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1040127981
+Name: Gain de sortie
+Parameter Type: Generic
+Values: Minimum = -inf dB, Default = 0.00 dB, Maximum = 36.00 dB
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1141939823
+Name: Panoramique de sortie
+Parameter Type: Generic
+Values: Minimum = -100.0, Default = 0.0, Maximum = 100.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1349699552
+Name: Mode de panoramique
+Parameter Type: Indexed
+Values: Minimum = L/R, Default = L/R, Maximum = M/S
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 2
+Value: 0,  String: L/R
+Value: 1,  String: M/S
+  -parameter PASS
+
+Parameter ID:1438330318
+Name: Gain automatique
+Parameter Type: Boolean
+Values: Minimum = Off, Default = Off, Maximum = On
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1564195625
+Name: Caractère
+Parameter Type: Indexed
+Values: Minimum = Clean, Default = Clean, Maximum = Warm
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 3
+Value: 0,  String: Clean
+Value: 1,  String: Subtle
+Value: 2,  String: Warm
+  -parameter PASS
+
+Parameter ID:1992172811
+Name: Échelle de gain
+Parameter Type: Generic
+Values: Minimum = 0.0, Default = 100.0, Maximum = 200.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Testing that parameters retain value across reset and initialization
+  PASS
+
+* * PASS
+--------------------------------------------------
+FORMAT TESTS:
+
+Reported Channel Capabilities (explicit):
+      [1, 1]  [2, 2]  
+
+Input/Output Channel Handling:
+1-1   1-2   1-4   1-5   1-6   1-7   1-8   2-2   2-4   2-5   2-6   2-7   2-8   4-4   4-5   5-5   6-6   7-7   8-8
+X                                         X                                                                       
+
+# # AudioChannelLayouts (5), Input Scope:
+ChannelLayout is Writable: T
+The Unit publishes the following Channel Layouts:
+  0x640001, 0x650002, 0x660002, 0x670002, 0x6A0002, 
+
+Is Audio Channel Layout Available:
+Mono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F 
+X       X       X                                                                                                               
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x640001, Success - did not reset format with mis-matched layout
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x650002, Successsful
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful
+
+# # AudioChannelLayouts (5), Output Scope:
+ChannelLayout is Writable: T
+The Unit publishes the following Channel Layouts:
+  0x640001, 0x650002, 0x660002, 0x670002, 0x6A0002, 
+
+Is Audio Channel Layout Available:
+Mono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F 
+X       X       X                                                                                                               
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x640001, Success - did not reset format with mis-matched layout
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x650002, Successsful
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful
+
+* * PASS
+--------------------------------------------------
+RENDER TESTS:
+
+Input Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Output Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Render Test at 512 frames
+Slicing Render Test at 64 frames
+  PASS
+
+
+Render Test at 64 frames, sample rate: 22050 Hz
+Render Test at 137 frames, sample rate: 96000 Hz
+Render Test at 4096 frames, sample rate: 48000 Hz
+Render Test at 4096 frames, sample rate: 192000 Hz
+Render Test at 4096 frames, sample rate: 11025 Hz
+Render Test at 512 frames, sample rate: 44100 Hz
+  PASS
+
+1 Channel Test:
+Render Test at 512 frames
+  PASS
+
+Checking connection semantics:
+Connection format:
+AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+  PASS
+
+Bad Max Frames - Render should fail
+  PASS
+
+Checking parameter setting
+Using AudioUnitSetParameter
+Using AudioUnitScheduleParameter
+  PASS
+
+Checking ramped parameter scheduling
+  PASS
+
+Test MIDI
+  PASS
+
+* * PASS
+--------------------------------------------------
+AU VALIDATION SUCCEEDED.
+--------------------------------------------------
